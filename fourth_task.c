@@ -19,8 +19,21 @@ Don't forget to release the memory at the end.
 #include <string.h>
 #include <stdlib.h>
 
+char* skibidi(char* source, int start, int end){
+  int len= strlen(source)-(end-start);
+  char* nosub=(char*)malloc(len+1);
+  int j=0;
+  for(int i=start; i<end; i++){
+      nosub[j]=source[i];
+      j++;
+  }
+  return nosub; 
+}
+
 int main(){
-
-
+  char* s="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+  char* j=skibidi(s,2,9);
+  printf("%s", j);
+  free(j);
   return 0;
 }

@@ -56,8 +56,15 @@ char *copystring(char const *str)
     return newstr;
 }
 
-___ stringcat(___, ____)
+char* stringcat(char*x, char*y)
 {
+
+    int len= strlen(x) + strlen(y);
+    char* cat=(char*)malloc(len+1);
+    strcpy(cat,x);
+    strcat(cat,y);
+    //The strcat() function located in string.h header file concatenates two strings: the strcat(x, y) call adds string y to the end of string x. For the correct //
+    return cat;
 }
 
 int main()
